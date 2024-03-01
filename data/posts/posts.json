@@ -5,7 +5,7 @@
     "date": "2023-10-28",
     "category": "javascript",
     "path": "review-2023",
-    "featured": false
+    "featured": true
   },
   {
     "title": "Next.js 14버전 리뷰",
@@ -13,14 +13,38 @@
     "date": "2024-01-12",
     "category": "javascript",
     "path": "next-2024",
-    "featured": false
+    "featured": true
   },
   {
     "title": "테스트용 글",
     "description": "테스트용입니다.",
     "date": "2024-03-01",
     "category": "javascript",
-    "path": "test-2024",
-    "featured": false
+    "path": "test-2024-1",
+    "featured": true
+  },
+  {
+    "title": "테스트용 글2",
+    "description": "테스트용2입니다.",
+    "date": "2024-02-29",
+    "category": "javascript",
+    "path": "test-2024-2",
+    "featured": true
+  },
+  {
+    "title": "테스트용 글3",
+    "description": "테스트용3입니다.",
+    "date": "2024-02-28",
+    "category": "javascript",
+    "path": "test-2024-3",
+    "featured": true
+  },
+  {
+    "title": "테스트용 글4",
+    "description": "테스트용4입니다.",
+    "date": "2024-02-27",
+    "category": "javascript",
+    "path": "test-2024-4",
+    "featured": true
   }
 ]
