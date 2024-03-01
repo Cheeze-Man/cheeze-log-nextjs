@@ -5,8 +5,8 @@ export default async function FeaturedPosts() {
   const posts = await getFeaturedPosts();
 
   return (
-    <section>
-      <h2 className="text-2xl font-bold my-4">추천 게시물</h2>
+    <section className="my-4">
+      <h2 className="text-2xl font-bold my-2">주요 게시물</h2>
       <PostsGrid posts={posts} />
     </section>
   );
