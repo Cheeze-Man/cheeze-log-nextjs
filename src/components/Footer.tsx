@@ -2,9 +2,6 @@ export default function Footer() {
   const currentDay = new Date();
   const currentYear = currentDay.getFullYear();
   return (
-    // <p className="bg-amber-900 text-white text-sm text-center">
-    //   {"Welcome to my blog | ⓒ All Rights Reserved."}
-    // </p>
     <footer>
       <div className="bg-amber-100">
         <div className="container mx-auto pt-4 px-5 flex flex-wrap flex-col sm:flex-row">
