@@ -9,7 +9,7 @@ export default function Footer() {
             © {currentYear} All Rights Reserved.
           </p>
           <span className="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-amber-950 text-sm">
-            경기도 시흥시 신천동.
+            Siheung-daero, Siheung-si, Gyeonggi-do, Republic of Korea(🇰🇷)
           </span>
         </div>
         <div className="container mx-auto pb-4 px-5 flex flex-wrap flex-col sm:flex-row">

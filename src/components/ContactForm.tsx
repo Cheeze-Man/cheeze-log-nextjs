@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Banner, { BannerData } from "./Banner";
+import { sendContactEmail } from "@/service/contact";
 
 type Form = {
   from: string;
@@ -8,12 +9,14 @@ type Form = {
   message: string;
 };
 
+const DEFAULT_DATA = {
+  from: "",
+  subject: "",
+  message: "",
+};
+
 export default function ContactForm() {
-  const [form, setForm] = useState<Form>({
-    from: "",
-    subject: "",
-    message: "",
-  });
+  const [form, setForm] = useState<Form>(DEFAULT_DATA);
   const [banner, setBanner] = useState<BannerData | null>(null);
 
   const handleFormChange = (
@@ -24,11 +27,19 @@ export default function ContactForm() {
   };
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(form);
-    setBanner({ message: "이메일이 전송됐습니다.", state: "success" });
-    setTimeout(() => {
-      setBanner(null);
-    }, 3000);
+    sendContactEmail(form) //
+      .then(() => {
+        setBanner({ message: "이메일이 전송됐습니다.", state: "success" });
+        setForm(DEFAULT_DATA);
+      }) //
+      .catch(() => {
+        setBanner({ message: "이메일 전송에 실패했습니다.", state: "error" });
+      }) //
+      .finally(() => {
+        setTimeout(() => {
+          setBanner(null);
+        }, 3000);
+      });
   };
 
   return (
@@ -42,12 +53,13 @@ export default function ContactForm() {
           Your Email
         </label>
         <input
-          className="rounded-sm"
+          className="text-black rounded-sm p-2 italic mb-2"
           required
           autoFocus
           type="email"
           id="from"
           name="from"
+          placeholder="이메일을 입력해주세요."
           value={form.from}
           onChange={handleFormChange}
         />
@@ -55,11 +67,12 @@ export default function ContactForm() {
           Subject
         </label>
         <input
-          className="rounded-sm"
+          className="text-black rounded-sm p-2 font-semibold mb-2"
           required
           type="text"
           id="subject"
           name="subject"
+          placeholder="제목을 입력해주세요."
           value={form.subject}
           onChange={handleFormChange}
         />
@@ -67,15 +80,16 @@ export default function ContactForm() {
           Message
         </label>
         <textarea
-          className="text-black rounded-sm"
+          className="text-black rounded-sm p-2"
           required
           rows={10}
           id="message"
           name="message"
+          placeholder="내용을 입력해주세요."
           value={form.message}
           onChange={handleFormChange}
         />
-        <button className="rounded-sm bg-amber-300 text-black font-bold hover:bg-amber-400">
+        <button className="rounded-sm bg-amber-300 text-black font-bold transition-all hover:bg-amber-400 p-2">
           Submit
         </button>
       </form>

@@ -18,7 +18,7 @@ export default function ContactPage() {
   return (
     <section className="flex flex-col items-center">
       <h2 className="text-3xl font-bold my-2">Contact Me</h2>
-      <p className="italic text-lg tracking-tighter">pksam5046@naver.com</p>
+      <p className="italic text-lg tracking-tighter">tumgh1324@gmail.com</p>
       <ul className="flex gap-6 my-2">
         {LINKS.map(({ title, icon, url }, i) => (
           <a
