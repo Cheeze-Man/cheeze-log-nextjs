@@ -7,8 +7,14 @@ import "./globals.css";
 const sans = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Stacking Cheeze",
-  description: "CheezeMan's Blog | 치즈맨의 블로그",
+  title: {
+    default: "Stacking Cheeze",
+    template: "Stacking Cheeze | %s",
+  },
+  description: "CheezeMan's Blog | 프론트엔드 개발자 치즈맨의 블로그",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

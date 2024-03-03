@@ -1,5 +1,11 @@
+import { Metadata } from "next";
 import Hero from "@/components/Hero";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "About Me",
+  description: "Who is CheezeMan ?",
+};
 
 const TITLE_CLASS = "text-4xl font-bold text-amber-900 mb-1 cursor-default";
 const LINK_CLASS = "underline decoration-wavy";

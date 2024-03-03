@@ -1,5 +1,11 @@
-import ContactForm from "@/components/ContactForm";
+import { Metadata } from "next";
 import { SiGithub, SiNaver } from "react-icons/si";
+import ContactForm from "@/components/ContactForm";
+
+export const metadata: Metadata = {
+  title: "Contact Me",
+  description: "CheezeMan에게 메일 보내기",
+};
 
 const LINKS = [
   {
